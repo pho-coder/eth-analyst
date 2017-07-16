@@ -21,7 +21,7 @@
         options-summary
         ""
         "Actions:"
-        "  one      Start one analyst"
+        "  start      Start one analyst"
         ""
         "Please refer to the manual page for more information."]
        (clojure.string/join \newline)))
@@ -39,7 +39,7 @@
     (log/info component "stopped"))
   (shutdown-agents))
 
-(defn run-one
+(defn start
   []
   (log/info "run one"))
 
