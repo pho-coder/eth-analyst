@@ -5,5 +5,5 @@ ANALYST_HOME=`cd "$bin"/..;pwd`
 echo $ANALYST_HOME
 readonly MASTER_JARS="$(ls "$ANALYST_HOME"/analyst-*.jar 2> /dev/null | tr "\n" :)"
 CLASSPATH="$ANALYST_HOME/lib/*:$MASTER_JARS"
-java -Duser.timezone=Asia/Shanghai -DETH_ANALYST_HOME=${ANALYST_HOME} -Dlogback.configurationFile=$ANALYST_HOME/logback.xml -cp "$CLASSPATH" rocks.pho.eth.analyst "$@"
+java -Duser.timezone=Asia/Shanghai -DANALYST_HOME=${ANALYST_HOME} -Dlogback.configurationFile=$ANALYST_HOME/logback.xml -cp "$CLASSPATH" rocks.pho.eth.analyst "$@"
 tail -f $ANALYST_HOME/log/analyst.log

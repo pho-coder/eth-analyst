@@ -39,7 +39,7 @@
     (log/info component "stopped"))
   (shutdown-agents))
 
-(defn start
+(defn start-app
   []
   (log/info "run one"))
 
@@ -61,8 +61,8 @@
       (log/info component "started"))
     
     ;; Execute program with options
-    (let [raw-file (:raw-file options)]
+    (let [raw-file (:file options)]
       (log/info "raw file:" raw-file)
       (case (first arguments)
-        "one" (run-one)
+        "start" (start-app)
         (exit 1 (usage summary))))))
