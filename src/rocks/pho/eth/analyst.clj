@@ -40,8 +40,10 @@
   (shutdown-agents))
 
 (defn start-app
-  []
-  (log/info "run one"))
+  [raw-file]
+  (log/info "start")
+  (log/info "raw file:" raw-file)
+  (utils/read-raw-data raw-file analysis/raw-data-queue))
 
 (defn -main
   "I don't do a whole lot ... yet."
@@ -62,7 +64,6 @@
     
     ;; Execute program with options
     (let [raw-file (:file options)]
-      (log/info "raw file:" raw-file)
       (case (first arguments)
-        "start" (start-app)
+        "start" (start-app raw-file)
         (exit 1 (usage summary))))))
