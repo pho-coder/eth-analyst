@@ -43,7 +43,8 @@
   [raw-file]
   (log/info "start")
   (log/info "raw file:" raw-file)
-  (utils/read-raw-data raw-file analysis/raw-data-queue))
+  (utils/read-raw-data raw-file analysis/raw-data-queue)
+  (shutdown-agents))
 
 (defn -main
   "I don't do a whole lot ... yet."
